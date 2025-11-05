@@ -312,7 +312,7 @@
         <!-- Ресторан -->
         <div class="intersection-point" id="restaurantPoint">
             <div class="restaurant-marker">
-                🍽️ Наш ресторан!
+                🍽️ Волшебный пир будет здесь!
             </div>
         </div>
     </div>
@@ -536,22 +536,26 @@
         }
 
         // Показать финальное сообщение
-        function showFinalMessage() {
-            const riddleContent = document.getElementById('riddleContent');
-            riddleContent.innerHTML = `
-                <div class="final-message">
-                    <h2>🎉 Поздравляю! 🎉</h2>
-                    <p>Все дороги привели к нашему месту!</p>
-                    <div class="restaurant-marker" style="margin: 15px auto; padding: 12px;">
-                        🍽️ Наш ресторан!<br>
-                        <small>Адрес и время уточним позже</small>
-                    </div>
-                    <p style="font-style: italic;">
-                        Все точки нашей истории сошлись в одном месте...
-                    </p>
-                </div>
-            `;
-        }
+   function showFinalMessage() {
+    const riddleContent = document.getElementById('riddleContent');
+    riddleContent.innerHTML = `
+        <div class="final-message">
+            <h2>🎉 Поздравляю! 🎉</h2>
+            <p>Все дороги привели к нашему месту!</p>
+            <div class="restaurant-marker" style="margin: 15px auto; padding: 12px;">
+                🍀 Пристанище клевера<br>
+                <small>• Социалистическая ул., 9</small>
+            </div>
+            <p style="font-style: italic;">
+                Все точки нашей истории сошлись в одном месте...
+            </p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                🎵 Волынка ждёт, виски налито!<br>
+                В пристанище клевера нас судьба пригласила!
+            </p>
+        </div>
+    `;
+}
 
         // Запускаем при загрузке
         document.addEventListener('DOMContentLoaded', init);
