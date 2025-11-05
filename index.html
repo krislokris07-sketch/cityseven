@@ -124,7 +124,7 @@
 .riddles-container {
     width: 333px;
     height: 335px;
-    margin: 0 auto;
+    margin: 0 auto; /* Это должно центрировать */
     background: url('плашка.png') no-repeat center center;
     background-size: contain;
     position: relative;
@@ -132,6 +132,9 @@
     align-items: center;
     justify-content: center;
     padding: 30px;
+    /* Добавляем для надежного центрирования */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
         .riddle-content {
