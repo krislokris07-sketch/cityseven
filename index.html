@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Найди наше место</title>
+    
+    <!-- Подключаем шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC&family=Podkova:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <style>
         /* ОСНОВНЫЕ ЦВЕТА */
         :root {
@@ -23,7 +27,7 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Podkova', serif; /* Основной шрифт для всего */
             background: url('фон_основной.jpg') no-repeat center center fixed;
             background-size: cover;
             color: var(--text-color);
@@ -38,11 +42,11 @@
         .map-container {
             width: 100%;
             max-width: 400px;
-            height: 45vh; /* Уменьшили высоту */
+            height: 45vh;
             position: relative;
             margin-bottom: 15px;
             border-radius: 15px;
-            overflow: hidden; /* Возвращаем чтобы рамка обрезала карту */
+            overflow: hidden;
             box-shadow: 0 5px 20px var(--shadow-color);
             border: 3px solid var(--frame-color);
         }
@@ -50,10 +54,10 @@
         .main-map {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Карта заполняет контейнер */
+            object-fit: cover;
         }
 
-        /* Точки на карте */
+        /* Точки на карте - Bona Nova SC */
         .map-point {
             position: absolute;
             background: #2c2c2f;
@@ -69,6 +73,7 @@
             font-size: 0.75em;
             text-align: center;
             min-width: 80px;
+            font-family: 'Bona Nova SC', serif; /* Шрифт для точек */
         }
 
         .point-pulse {
@@ -102,7 +107,7 @@
             display: none;
         }
 
-        /* Точка пересечения (ресторан) */
+        /* Точка пересечения (ресторан) - Bona Nova SC */
         .intersection-point {
             position: absolute;
             transform: translate(-50%, -50%);
@@ -119,23 +124,24 @@
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
             font-size: 0.9em;
             min-width: 150px;
+            font-family: 'Bona Nova SC', serif; /* Шрифт для ресторана */
         }
 
-.riddles-container {
-    width: 400px;
-    height: 402px;
-    margin: 0 auto; /* Это должно центрировать */
-    background: url('плашка.png') no-repeat center center;
-    background-size: contain;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
-}
+        .riddles-container {
+            width: 400px;
+            height: 402px;
+            margin: 0 auto;
+            background: url('плашка.png') no-repeat center center;
+            background-size: contain;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
+        }
 
         .riddle-content {
             text-align: center;
@@ -144,10 +150,11 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            font-family: 'Podkova', serif; /* Основной шрифт для загадок */
         }
 
         .riddle-question {
-            font-size: 1em; /* Увеличили шрифт */
+            font-size: 1em;
             line-height: 1.4;
             white-space: pre-line;
             font-style: italic;
@@ -159,21 +166,22 @@
         .answer-options {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px; /* Увеличили отступы */
+            gap: 10px;
             margin-bottom: 15px;
         }
 
         .option {
-            padding: 10px 6px; /* Увеличили паддинг */
+            padding: 10px 6px;
             background: rgba(248, 243, 230, 0.95);
             border: 2px solid var(--frame-color);
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 0.9em; /* Увеличили шрифт */
+            font-size: 0.9em;
             text-align: center;
             color: var(--frame-color);
             font-weight: 500;
+            font-family: 'Podkova', serif; /* Шрифт для вариантов */
         }
 
         .option:hover {
@@ -198,14 +206,15 @@
             background: var(--frame-color);
             color: var(--text-color);
             border: none;
-            padding: 10px 20px; /* Увеличили */
+            padding: 10px 20px;
             border-radius: 20px;
-            font-size: 1em; /* Увеличили */
+            font-size: 1em;
             cursor: pointer;
             transition: all 0.3s ease;
             border: 2px solid var(--accent-color);
             font-weight: bold;
             margin-bottom: 8px;
+            font-family: 'Podkova', serif; /* Шрифт для кнопки */
         }
 
         .submit-btn:hover {
@@ -221,13 +230,13 @@
 
         /* Прогресс и подсказки */
         .progress {
-            font-size: 0.85em; /* Увеличили */
+            font-size: 0.85em;
             opacity: 0.8;
             color: var(--text-color);
         }
 
         .hint {
-            font-size: 0.8em; /* Увеличили */
+            font-size: 0.8em;
             opacity: 0.7;
             color: var(--text-color);
             font-style: italic;
@@ -261,12 +270,14 @@
         .final-message {
             text-align: center;
             padding: 15px;
+            font-family: 'Podkova', serif; /* Основной шрифт */
         }
 
         .final-message h2 {
             margin-bottom: 15px;
             color: #d7d5d3;
             font-size: 1.3em;
+            font-family: 'Bona Nova SC', serif; /* Заголовок - Bona Nova */
         }
 
         .final-message p {
@@ -279,7 +290,7 @@
 <body>
     <!-- Карта -->
     <div class="map-container">
-        <img src="карта.jpg" alt="Карта Петербурга" class="main-map"> <!-- JPG -->
+        <img src="карта.jpg" alt="Карта Петербурга" class="main-map">
         
         <!-- Точки будут добавляться динамически -->
         <svg class="connection-lines" id="connectionLines"></svg>
@@ -304,14 +315,14 @@
         const pointsConfig = [
             { id: 1, x: 13, y: 78, name: "Начало пути" },
             { id: 2, x: 20, y: 43, name: "Улица сердца" },
-            { id: 3, x: 77, y: 32, name: "Первый храм" },       // ← ТЕПЕРЬ ХРАМ
-    { id: 4, x: 66, y: 74, name: "Прежний причал" }   // ← ТЕПЕРЬ ПРЕЖНИЙ ПРИЧАЛ
+            { id: 3, x: 77, y: 32, name: "Первый храм" },
+            { id: 4, x: 66, y: 74, name: "Прежний причал" }
         ];
 
         const restaurantPoint = { x: 44, y: 57 };
 
         // Загадки
-       const riddles = [
+        const riddles = [
             {
                 question: `Твои шаги — как строчки в биографии моей,\nИ нету рифмы более точной и простой.\nТам, где сошлись когда-то линии судьбы —\nКак *** линия сложилась подо мной.`,
                 options: [
