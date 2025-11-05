@@ -27,7 +27,7 @@
         }
 
         body {
-            font-family: 'Podkova', serif; /* Основной шрифт для всего */
+            font-family: 'Podkova', serif;
             background: url('фон_основной.jpg') no-repeat center center fixed;
             background-size: cover;
             color: var(--text-color);
@@ -38,7 +38,18 @@
             align-items: center;
         }
 
-        /* Карта - уменьшаем контейнер */
+        /* Заголовок "Пир во дворце" */
+        .main-title {
+            font-family: 'Bona Nova SC', serif;
+            font-size: 2.2em;
+            color: #d7d5d3;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+
+        /* Карта */
         .map-container {
             width: 100%;
             max-width: 400px;
@@ -73,7 +84,7 @@
             font-size: 0.75em;
             text-align: center;
             min-width: 80px;
-            font-family: 'Bona Nova SC', serif; /* Шрифт для точек */
+            font-family: 'Bona Nova SC', serif;
         }
 
         .point-pulse {
@@ -124,7 +135,7 @@
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
             font-size: 0.9em;
             min-width: 150px;
-            font-family: 'Bona Nova SC', serif; /* Шрифт для ресторана */
+            font-family: 'Bona Nova SC', serif;
         }
 
         .riddles-container {
@@ -150,7 +161,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            font-family: 'Podkova', serif; /* Основной шрифт для загадок */
+            font-family: 'Podkova', serif;
         }
 
         .riddle-question {
@@ -181,7 +192,7 @@
             text-align: center;
             color: var(--frame-color);
             font-weight: 500;
-            font-family: 'Podkova', serif; /* Шрифт для вариантов */
+            font-family: 'Podkova', serif;
         }
 
         .option:hover {
@@ -214,7 +225,7 @@
             border: 2px solid var(--accent-color);
             font-weight: bold;
             margin-bottom: 8px;
-            font-family: 'Podkova', serif; /* Шрифт для кнопки */
+            font-family: 'Podkova', serif;
         }
 
         .submit-btn:hover {
@@ -270,14 +281,14 @@
         .final-message {
             text-align: center;
             padding: 15px;
-            font-family: 'Podkova', serif; /* Основной шрифт */
+            font-family: 'Podkova', serif;
         }
 
         .final-message h2 {
             margin-bottom: 15px;
             color: #d7d5d3;
             font-size: 1.3em;
-            font-family: 'Bona Nova SC', serif; /* Заголовок - Bona Nova */
+            font-family: 'Bona Nova SC', serif;
         }
 
         .final-message p {
@@ -288,6 +299,9 @@
     </style>
 </head>
 <body>
+    <!-- Заголовок -->
+    <h1 class="main-title">Пир во дворце</h1>
+
     <!-- Карта -->
     <div class="map-container">
         <img src="карта.jpg" alt="Карта Петербурга" class="main-map">
@@ -310,6 +324,7 @@
         </div>
     </div>
 
+    <!-- Остальной JavaScript код без изменений -->
     <script>
         // Конфигурация точек
         const pointsConfig = [
